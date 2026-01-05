@@ -4,17 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "dist": "tsup src",
-   "dev": "tsx --watch src/server.ts ",
-   "start:dist": "npm run dist && node dist/src/index.js"
+    "dist": "tsup src",
+    "dev": "tsx --watch src/server.ts ",
+    "start:dist": "npm run dist && node dist/src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "tsup": "^8.5.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
