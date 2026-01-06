@@ -1,15 +1,13 @@
 import express  from 'express'
-import { getPlayer } from './controllers/players-controller.js'
+import router from './routes.js'
 
 function createApp() {
   const app = express()
   
   app.use(express.json())
-
-  app.get('/',getPlayer )
+ app.use("/", router)
 
   return app;
-
 }
 
 export default createApp;
