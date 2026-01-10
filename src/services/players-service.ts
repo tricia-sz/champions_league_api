@@ -1,7 +1,8 @@
+import * as PlayerRepository from '../repositories/players-repository.js'
 import { noContent, ok } from "../utils/http-helper.js";
 
 export const getPlayerService = async () => {
-    const data = null
+    const data = await PlayerRepository.findAllPlayers();
     let response = null;
 
     if(data) {
