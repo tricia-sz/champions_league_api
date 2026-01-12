@@ -1,4 +1,6 @@
 
+import { response } from 'express';
+import type { PlayerModel } from '../models/player-models.js';
 import * as PlayerRepository from '../repositories/players-repository.js'
 import * as httpResponse from "../utils/http-helper.js";
 
@@ -26,5 +28,14 @@ export const getPlayerByIdService = async (id: number) => {
   }
 
   return response;
+
+};
+
+export const createPlayerService = async (player: PlayerModel) => {
+  if(player) {
+
+  } else {
+    response = httpResponse.noContent();
+  }
 
 }
