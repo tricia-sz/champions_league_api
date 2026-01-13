@@ -1,6 +1,6 @@
 import { type Request, type Response } from 'express';
 import * as service from '../services/players-service.js';
-import { noContent } from '../utils/http-helper.js';
+import { badRequest, noContent } from '../utils/http-helper.js';
 
 export const getPlayer = async (req: Request, res: Response) => {
   const httpResponse = await service.getPlayerService();
@@ -26,26 +26,10 @@ export const postPlayer = async(req: Request, res: Response) => {
     res.status(httpResponse.statusCode).json(await httpResponse.body);
 
   } else {
-    const response = noContent()
+    const response = await badRequest()
 
-    res.status((await response).statusCode).json((await response).body)
+    res.status(response.statusCode).json(response.body)
 
   }
 }
 
-{
-  "id": 9001,
-  "name": "Rivelino",
-  "blub": "Sport Club Corinthians",
-  "nationality": "Brasil",
-  "position": "Meio Campo",
-  "statistics": {
-    "Overall": 99,
-    "Pace": 99,
-    "Shooting": 99,
-    "Passing": 99,
-    "Dribbling": 99,
-    "Defending": 99,
-    "Physical": 99
-  }
-}
