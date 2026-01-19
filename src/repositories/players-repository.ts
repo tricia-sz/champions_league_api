@@ -321,7 +321,7 @@ export const insertPlayer = async(player: PlayerModel) => {
   database.push(player)
 }
 
-export const deleteOnePlayer = async(id: number) => {
+export const deleteOnePlayer = async (id: number) => {
   const index = database.findIndex(p => p.id === id)
 
   if(index !== -1) {
